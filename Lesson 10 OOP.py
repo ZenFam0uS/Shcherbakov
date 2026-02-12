@@ -108,3 +108,82 @@ class User:
 man_1 = User(name="Oleg",age=27)
 other_user = User(name="Igor",age=29)
 print(man_1.welcome(other_user))
+
+
+# Задача 8
+# Создай класс БанкСчет.
+# В конструкторе сохраняй владелец и баланс (по умолчанию 0).
+# Добавь методы:
+# пополнить(сумма) — увеличивает баланс
+# снять(сумма) — уменьшает баланс (если сумма не превышает баланс)
+# Создай один объект.
+# Пополни счёт на 500, сними 200, выведи итоговый баланс.
+
+class BankCount:
+    def __init__(self,user,balance=0):
+        self.user = user
+        self.balance = balance
+
+    def top_up(self,up):
+        self.balance += up
+        print(self.balance)
+    def down_up(self,down):
+        if down < self.balance:
+            self.balance -= down
+        elif down > self.balance:
+            print("Ошибка, на балансе не достаточно средств")
+up_1 = BankCount(user="Alex")
+up_1.top_up(500)
+up_1.down_up(200)
+
+
+# Задача 9
+# Создай класс Смартфон.
+# В конструкторе сохраняй модель и цена.
+# Добавь общий атрибут количество_продано = 0.
+# Добавь метод продать(), который:
+# Увеличивает общий счётчик проданных на 1
+# Выводит сообщение: "Смартфон {модель} продан"
+# Создай два объекта.
+# Вызови метод продать() для каждого.
+# Выведи общее количество проданных смартфонов.
+
+class Phone:
+    count = 0
+    def __init__(self,model,price):
+        self.model = model
+        self.price = price
+
+    def seals(self):
+        Phone.count += 1
+        print(f"Смартфон {self.model} продан")
+
+bay_1 = Phone(model="Iphone",price=1000)
+bay_2 = Phone(model="Samsung",price=2000)
+bay_1.seals()
+bay_2.seals()
+print(Phone.count)
+
+
+# Задача 10
+# Создай класс Собака.
+# В конструкторе сохраняй кличка и возраст.
+# Добавь метод лай(), который выводит:
+# "{кличка} говорит Гав!"
+# Создай список из трёх объектов класса Собака с разными кличками и возрастами.
+# Пройди по списку циклом и вызови метод лай() для каждой собаки.
+
+class Dog:
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+
+    def say(self):
+        print(f"{self.name} говорит Гав!")
+
+nickname = [
+    Dog("Spaik",1),
+    Dog("Rodster",5),
+    Dog("Polka",3)]
+for n in nickname:
+    n.say()
