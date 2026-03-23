@@ -8,7 +8,7 @@
 
 # Требование: Для записи и чтения используй обычные методы open() и close(), без контекстного менеджера with.
 
-file = open("numbers.txt","w",encoding="utf-8")
+file = open("numbers.txt", "w", encoding="utf-8")
 
 file.write("1\n")
 file.write("2\n")
@@ -38,7 +38,7 @@ print("Сумма чисел из файла:",total)
 # Уточнение: Тебе нужно два отдельных контекстных менеджера with (один для записи, другой для чтения) в одной программе. Не забывай, что после выхода из блока with файл автоматически закрывается.
 # Приступай к решению. Когда напишешь код, отправь его мне для проверки.
 
-with open("greeting.txt","w",encoding="utf-8") as file_w:
+with open("greeting.txt", "w", encoding="utf-8") as file_w:
     file_w.write("Hello, Python!")
-with open("greeting.txt","r",encoding="utf-8") as file_r:
+with open("greeting.txt", "r", encoding="utf-8") as file_r:
     print(file_r.read())
