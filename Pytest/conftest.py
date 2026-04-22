@@ -1,7 +1,7 @@
-import os
+import os # импорт модуля для работы с ос (переменные окружения, файлы-пути)
 
-import pytest
-from selenium import webdriver
+import pytest # импорт библиотеки для фикстурок
+from selenium import webdriver # импорт вебдрайвера
 
 @pytest.fixture()
 
@@ -20,7 +20,7 @@ def setup_environment_properties():
     properties = {
         "STAGE": os.environ["STAGE"],
         "BROWSER": os.environ["BROWSER"],
-        "MR": os.environ["MR"],
+        "URL": os.environ["URL"],
         "PYTHON": os.environ["PYTHON"],
     }
     with open("allure-results/environment.properties", "w") as file:
