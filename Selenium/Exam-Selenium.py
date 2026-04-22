@@ -12,7 +12,7 @@ options.add_experimental_option("prefs", {
 )
 
 driver = webdriver.Chrome(options=options)
-driver.get("https://www.saucedemo.com/")
+driver.get("https://www.saucedemo.com")
 time.sleep(1) # ждем чтобы сайт прогрузился
 
 # Авторизация
